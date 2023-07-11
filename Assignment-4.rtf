@@ -1,0 +1,122 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Symbol;}{\f2\froman\fprq2\fcharset0 Times New Roman;}{\f3\fswiss\fprq2\fcharset0 Segoe UI;}{\f4\fmodern\fprq1\fcharset0 Courier New;}{\f5\fswiss\fprq2\fcharset0 Calibri;}}
+{\colortbl ;\red55\green65\blue81;\red0\green255\blue255;\red217\green217\blue227;\red247\green247\blue248;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 <aside>\par
+\f1\u-10179?\u-9055?\f0  **Q.1** Explain Hoisting in JavaScript\par
+Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their respective scopes during the compilation phase before the code is executed. This means that regardless of where the declarations are placed in the code, they are treated as if they were at the top of their scope. However, it's important to note that only the declarations are hoisted, not the initializations or assignments\par
+For example:\par
+javascript\par
+console.log(x); // Output: undefined\par
+var x = 10;\par
+Hoisting also applies to function declarations:\par
+foo(); // Output: "Hello, World!"\par
+function foo() \{\par
+  console.log("Hello, World!");\par
+\}\par
+\f1\u-10179?\u-9055?\f0  **Q.2** Explain Temporal Dead Zone?\par
+The Temporal Dead Zone (TDZ) is a behavior introduced in ECMAScript 6 (ES6) for variables declared using let and const. The TDZ is the period between the start of the block scope and the point where a variable is declared. During this period, if you try to access the variable, a reference error is thrown.\par
+For example:\par
+console.log(x); // Throws ReferenceError: Cannot access 'x' before initialization\par
+let x = 10;\par
+In this code snippet, the variable x is accessed before its declaration. Since let variables are not hoisted like var variables, the TDZ is in effect, and accessing the variable results in a reference error.\par
+\par
+\f1\u-10179?\u-9055?\f0  **Q.3** Difference between var & let?\par
+The main differences between var and let in JavaScript are as follows:\par
+Scoping: Variables declared with var are function-scoped, meaning they are accessible throughout the entire function in which they are defined. On the other hand, variables declared with let are block-scoped, limiting their accessibility to the block in which they are defined (e.g., within a loop or conditional statement).\par
+Hoisting: Variable declarations with var are hoisted to the top of their scope during the compilation phase, which means they can be accessed before their actual declaration. In contrast, let variables are not hoisted, and if you try to access them before their declaration, you'll encounter the Temporal Dead Zone (TDZ).\par
+\par
+Re-declaration: Variables declared with var can be re-declared within the same scope without any errors. This can potentially lead to accidental re-assignments and confusion. On the other hand, re-declaring a variable with the same name using let within the same scope will result in a syntax error.\par
+Global scope: Variables declared with var without any explicit block scope become part of the global scope, accessible throughout the entire program. In contrast, variables declared with let are not automatically added to the global scope and are limited to the scope in which they are defined\par
+\f1\u-10179?\u-9055?\f0  **Q.4** What are the major features introduced in ECMAScript 6?\par
+ECMAScript 6, also known as ES6 or ECMAScript 2015, introduced several significant features and improvements to JavaScript. Some of the major features introduced in ES6 include:\par
+let and const: ES6 introduced block-scoped variables with let and const, replacing the function-scoped variables of var.\par
+Arrow Functions: Arrow functions provide a concise syntax for writing function expressions.\par
+Classes: ES6 introduced the class keyword for defining classes and working with object-oriented programming concepts.\par
+Template Literals: Template literals allow embedding expressions and variables within string literals using backticks (`).\par
+Enhanced Object Literals: Object literals gained new syntax options, including shorthand property and method definitions.\par
+Destructuring Assignment: Destructuring allows extracting values from arrays or objects into individual variables using a concise syntax.\par
+Default Parameters: ES6 introduced the ability to assign default values to function parameters.\par
+Rest Parameters and Spread Operator: The rest parameter syntax (...) allows representing an indefinite number of arguments as an array, while the spread operator (...) spreads elements of an array or object into another array or object.\par
+Modules: ES6 introduced native support for modules, allowing code to be organized into separate files and easily shared and reused.\par
+Promises: Promises provide a more elegant way to work with asynchronous operations, making it easier to handle success and failure cases.\par
+\f1\u-10179?\u-9055?\f0  **Q.5** What is the difference between **`let`** and **`const`** ?\par
+The main difference between let and const in JavaScript is their mutability or re-assignability.\par
+let: Variables declared with let can be reassigned a new value. They have a mutable nature, meaning you can update the value assigned to them.\par
+let x = 10;\par
+x = 20; // Valid: Reassignment is allowed\par
+const: Variables declared with const are constants and cannot be reassigned once a value is assigned to them. They have an immutable nature.\par
+const y = 10;\par
+y = 20; // Invalid: Reassignment is not allowed\par
+\f1\u-10179?\u-9055?\f0  **Q.6**  What is template literals in ES6 and how do you use them?\par
+Template literals, introduced in ES6, provide an enhanced way to work with strings in JavaScript. They allow you to embed expressions andvariables within string literals using backticks (`).\par
+To create a template literal, you enclose the string within backticks instead of single quotes or double quotes. Within the template literal, you can include placeholders, indicated by $\{expression\}, where expression is any valid JavaScript expression.\par
+Here's an example of using template literals:\par
+const name = "Alice";\par
+const age = 25;\par
+// Using template literals\par
+const message = `Hello, $\{name\}! You are $\{age\} years old.`;\par
+console.log(message);\par
+// Output: Hello, Alice! You are 25 years old.\par
+In this example, the variables name and age are embedded within the template literal using $\{\} syntax. The expressions inside the placeholders are evaluated and replaced with their corresponding values.\par
+\f1\u-10179?\u-9055?\f0  **Q.7** What\rquote s difference between map & forEach?\par
+\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw15\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw15\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw15\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480\qc\cf1\b\f3\fs21\lang1033\cell\f4\fs18 map\f3\fs21\cell\f4\fs18 forEach\f3\fs21\cell\row\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480\b0 Purpose\cell Transforms each element of an array\cell Executes a callback for each element\cell\row\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480 Return Value\cell Returns a new array with transformed values\cell Does not return anything\cell\row\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480 Modifies Original Array\cell No\cell No\cell\row\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480 Use Case\cell When you want to transform each element of an array and create a new array based on the transformed values\cell When you want to perform an action on each element of an array without modifying the original array\cell\row\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480 Callback Function\cell Provides a return value for each element, which is used to construct the new array\cell Executes a function for each element, but the return value is ignored\cell\row\trowd\trgaph15\trleft-60\trbrdrl\brdrs\brdrw5 \trbrdrt\brdrs\brdrw5 \trbrdrr\brdrs\brdrw5 \trbrdrb\brdrs\brdrw5 \trpaddl15\trpaddr15\trpaddfl3\trpaddfr3
+\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx1425\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw5\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx5769\clvertalb\clcbpat4\clbrdrl\brdrw15\brdrs\brdrcf3\clbrdrt\brdrw5\brdrs\brdrcf3\clbrdrr\brdrw15\brdrs\brdrcf3\clbrdrb\brdrw15\brdrs\brdrcf3 \cellx9735 
+\pard\intbl\widctlpar\sb480\sa480 Immutable\cell Creates a new array without modifying the original array\cell Does not modify the original array\cell\row 
+\pard\sa200\sl276\slmult1\cf0\f0\fs22\lang9\par
+\f1\u-10179?\u-9055?\f0  **Q.8** How can you destructure objects and arrays in ES6?\par
+Destructuring assignment is a feature introduced in ES6 that allows you to extract values from objects and arrays into individual variables using a concise syntax. Here's how you can use destructuring for objects and arrays:\par
+\b Destructuring Objects:\par
+\b0 const person = \{ name: 'Alice', age: 25, city: 'New York' \};\par
+// Extracting values using object destructuring\par
+const \{ name, age, city \} = person;\par
+console.log(name); // Output: Alice\par
+console.log(age); // Output: 25\par
+console.log(city); // Output: New York\par
+In this example, we have an object person. Using object destructuring, we extract the values of name, age, and city from the person object and assign them to corresponding variables.\par
+\b Destructuring Arrays:\par
+\b0 const numbers = [1, 2, 3, 4, 5];\par
+// Extracting values using array destructuring\par
+const [first, second, ...rest] = numbers;\par
+console.log(first); // Output: 1\par
+console.log(second); // Output: 2\par
+console.log(rest); // Output: [3, 4, 5]\par
+\par
+\f1\u-10179?\u-9055?\f0  **Q.9** How can you define default parameter values in ES6 functions?\par
+In ES6, you can define default parameter values for function parameters. Default values are used when no argument or undefined is passed for a specific parameter. Here's an example:\par
+function greet(name = 'Anonymous') \{\par
+  console.log(`Hello, $\{name\}!`);\par
+\}\par
+greet(); // Output: Hello, Anonymous!\par
+greet('Alice'); // Output: Hello, Alice!\par
+In this example, the greet function has a parameter name with a default value of 'Anonymous'. If no argument is passed to the function or if undefined is passed, the default value will be used.\par
+Q10.  What is the purpose of the spread operator (...) in ES6?\par
+In ES6, the spread operator (...) is a powerful feature that allows us to expand or spread elements from an iterable object (like an array or string) into another object, such as an array or function call. Here are a few use cases:\par
+\b Array and Object Spreading:\par
+\b0 const numbers = [1, 2, 3];\par
+const letters = ['a', 'b', 'c'];\par
+const combined = [...numbers, ...letters];\par
+console.log(combined);\par
+// Output: [1, 2, 3, 'a', 'b', 'c']\par
+\b Function Argument Spreading:\par
+\b0 The spread operator can be used to spread out the elements of an array as arguments to a function call:\par
+function greet(name, age) \{\par
+  console.log(`Hello, $\{name\}! You are $\{age\} years old.`);\par
+\}\par
+const person = ['Alice', 25];\par
+greet(...person);\par
+// Output: Hello, Alice! You are 25 years old.\par
+\par
+}
+ 
