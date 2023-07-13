@@ -70,10 +70,20 @@ const questions = [
 	`;
   }
   
+  
   // Show popup
-  function showPopup(title, message) {
+function showPopup(title, message) {
+	const correctQuestions = correctAnswers;
+	const incorrectQuestions = incorrectAnswers;
+	 const totalQuestions = questions.length;
+  const passingScore = Math.floor(totalQuestions * 0.7); // Assuming passing score is 70% of total questions
+  
 	popupTitle.textContent = title;
-	popupMessage.textContent = message;
+	popupMessage.innerHTML = `
+    <div class="popup-message-item">Total Right question: ${correctQuestions}</div>
+    <div class="popup-message-item"> Total Wrong Question:${incorrectQuestions}</div>
+    <div class="popup-result-item">Final Result: ${correctQuestions >= passingScore ? 'Pass' : 'Fail'}</div>
+  `;
 	resultPopup.style.display = "block";
   }
   
@@ -96,10 +106,10 @@ const questions = [
   
 	if (userAnswer) {
 	  correctAnswers++;
-	  showPopup("Status:", "Your answer is correct!");
+	  showPopup("Score", "Your answer is correct!");
 	} else {
 	  incorrectAnswers++;
-	  showPopup("Status:", "Your answer is incorrect.");
+	  showPopup("Score", "Your answer is incorrect.");
 	}
   
 	currentQuestionIndex++;
@@ -108,7 +118,12 @@ const questions = [
 	if (currentQuestionIndex < questions.length) {
 	  loadQuestion();
 	} else {
-	  showLeaderboard();
+		const statusContainer = document.createElement("div");
+		statusContainer.textContent = `Correct: ${correctAnswers} | Incorrect: ${incorrectAnswers}`;
+		statusContainer.style.marginTop = "10px";
+		submitButton.parentNode.insertBefore(statusContainer, submitButton.nextSibling);
+	
+		showLeaderboard();
 	}
   }
   
