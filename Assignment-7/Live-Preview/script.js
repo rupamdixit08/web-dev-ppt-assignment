@@ -1,8 +1,10 @@
 const form = document.getElementById('preview-form');
+const titleInput= document.getElementById('title');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 const imageUrlInput = document.getElementById('image-url');
+const titlePreview=document.getElementById('title-preview') ;
 const namePreview = document.getElementById('name-preview');
 const emailPreview = document.getElementById('email-preview');
 const messagePreview = document.getElementById('message-preview');
@@ -14,7 +16,10 @@ form.addEventListener('input', function() {
   namePreview.textContent = nameInput.value;
   emailPreview.textContent = emailInput.value;
   messagePreview.textContent = messageInput.value;
+  titlePreview.textContent= titleInput.value;
+
 });
+
 
 // Set the name as the author name in the written by section
 nameInput.addEventListener('input', function() {
@@ -31,8 +36,10 @@ form.addEventListener('submit', function(event) {
   emailInput.value = '';
   messageInput.value = '';
   imageUrlInput.value = '';
+  titleInput.value='';
 
   // Reset the live preview
+  titlePreview.textContent='';
   namePreview.textContent = '';
   emailPreview.textContent = '';
   messagePreview.textContent = '';

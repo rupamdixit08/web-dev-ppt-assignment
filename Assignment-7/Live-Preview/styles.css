@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #dddee1;
     margin: 0;
     padding: 0;
   }
@@ -9,18 +9,34 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    gap:40px;
+    background-color: rgb(36, 39, 64);
+    margin-top: 20px;
+
+    
   }
   
   h2 {
     margin-bottom: 10px;
   }
   
-  .form-section,
+  .form-section{
+    width: 50%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: white;
+  }
   .preview-section {
     width: 50%;
     float: left;
     padding: 10px;
     box-sizing: border-box;
+    border-radius: 5px;
+    background-color: white;
+  
   }
   
   .form-section label,
