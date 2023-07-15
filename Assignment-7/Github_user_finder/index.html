@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GitHub User Finder</title>
+  <title>Github User Finder</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>GitHub User Finder</h1>
-    <div class="search-container">
-      <input type="text" id="username" placeholder="Enter GitHub username">
-      <button onclick="getUserData()">Search</button>
-    </div>
-    <div id="user-info" class="user-info">
+    <h1>Github User Find</h1>
+    <input type="text" id="usernameInput" placeholder="Enter GitHub username">
+    <button onclick="getUserData()">Get Data</button>
+
+    <div id="userContainer" class="hidden">
       <img id="avatar" src="" alt="User Avatar">
       <h2 id="name"></h2>
+      <p id="portfolio"></p>
+      <p id="location"></p>
+      <p id="publicRepos"></p>
+      <p id="followers"></p>
+      <p id="bio"></p>
     </div>
   </div>
 
