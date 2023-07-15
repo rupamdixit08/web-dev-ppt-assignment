@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OneCard - All Your Cards in One Place</title>
+    <style>
+        /* Reset default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Typography */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Main Section */
+        .main-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .main-section-content {
+            flex: 0 0 50%;
+        }
+
+        .main-section-image {
+            flex: 0 0 50%;
+            text-align: right;
+        }
+
+        .main-section-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Features Section */
+        .features-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            margin-bottom: 24px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #00b894;
+            color: #fff;
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: bold;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #00a383;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Dark Mode */
+        @media (min-width: 768px) {
+            body {
+                background-color: #111;
+                color: #fff;
+            }
+
+            .header {
+                color: #fff;
+            }
+
+            .main-section {
+                border-top: 1px solid #666;
+                border-bottom: 1px solid #666;
+            }
+
+            .main-section-content {
+                border-right: 1px solid #666;
+            }
+
+            .features-section {
+                border-top: 1px solid #666;
+                border-bottom: 1px solid #666;
+            }
+
+            .feature {
+                border-bottom: 1px solid #666;
+            }
+
+            .cta-section {
+                border-top: 1px solid #666;
+            }
+
+            .cta-button {
+                background-color: #00a383;
+            }
+
+            .footer {
+                border-top: 1px solid #666;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>All Your Cards in One Place</h1>
+            <p>A simple and secure way to manage all your cards.</p>
+        </header>
+
+        <section class="main-section">
+            <div class="main-section-content">
+                <h2>OneCard App</h2>
+                <p>Manage your credit cards, debit cards, loyalty cards, and more in one convenient app. Keep track of your transactions, view balances, and access exclusive offers.</p>
+            </div>
+            <div class="main-section-image">
+                <img src="https://img.freepik.com/free-vector/realistic-credit-card-template_23-2149137814.jpg?w=1380&t=st=1689422152~exp=1689422752~hmac=301da7692fd25b1c62c7aaebf2e272a4af559292708bf30bdeaa95ce40c94a27" alt="OneCard App">
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="feature">
+                <h3>Card Management</h3>
+                <p>Easily add, remove, and organize all your cards in one place.</p>
+            </div>
+            <div class="feature">
+                <h3>Transaction History</h3>
+                <p>View detailed transaction history for each of your cards.</p>
+            </div>
+            <div class="feature">
+                <h3>Secure and Convenient</h3>
+                <p>Rest assured that your card information is protected and transactions are seamless.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <a href="#" class="cta-button">Get Started</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 OneCard App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
