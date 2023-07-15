@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+        setError(null);
+      })
+      .catch((error) => {
+        setError('Error fetching products');
+        setProducts([]);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <nav className="navbar">
+        <h1>All Product </h1>
+      </nav>
+      <div className="product-list">
+        {error ? (
+          <p>{error}</p>
+        ) : (
+          products.map((product) => (
+            <div className="product" key={product.id}>
+              <img src={product.image} alt={product.title} />
+              <h2>{product.title}</h2>
+              <p>Price: ${product.price}</p>
+              <div className='button-container'>
+              <button className='btn'> Add to Cart</button>
+              <button className='btn'>Buy Now</button></div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
